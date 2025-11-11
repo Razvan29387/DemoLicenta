@@ -3,52 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <title>Person Management</title>
-    <style>
-        body { font-family: sans-serif; margin: 2em; }
-        .form-grid { display: grid; grid-template-columns: 100px 1fr; gap: 10px; margin-bottom: 1em;}
-        .button-group { display: flex; gap: 10px; margin-bottom: 1em;}
-        #person-list { list-style-type: none; padding: 0; }
-        #person-list li { padding: 5px; border-bottom: 1px solid #ccc; cursor: pointer; }
-        #person-list li:hover { background-color: #f0f0f0; }
-    </style>
+    <link rel="stylesheet" href="index.css">
 </head>
 <body>
 
 <h1>Person Management</h1>
 
-<div class="form-grid">
-    <label for="name">Name:</label>
-    <input type="text" id="name" placeholder="Enter name (ID)">
+<div class="management-container">
+    <div class="page-controls">
+        <button onclick="toggleFormVisibility()">Add New Person</button>
+    </div>
 
-    <label for="email">Email:</label>
-    <input type="email" id="email" placeholder="Enter email">
+    <div id="form-wrapper" style="display: none;">
+        <div class="form-grid">
+            <label for="name">Name:</label>
+            <input type="text" id="name" placeholder="Enter name (ID)">
 
-    <label for="address">Address:</label>
-    <input type="text" id="address" placeholder="Enter address">
+            <label for="email">Email:</label>
+            <input type="email" id="email" placeholder="Enter email">
 
-    <label for="phone">Phone:</label>
-    <input type="text" id="phone" placeholder="Enter phone number">
+            <label for="address">Address:</label>
+            <input type="text" id="address" placeholder="Enter address">
 
-    <label for="age">Age:</label>
-    <input type="number" id="age" placeholder="Enter age">
+            <label for="phone">Phone:</label>
+            <input type="text" id="phone" placeholder="Enter phone number">
 
-    <label for="gender">Gender:</label>
-    <input type="text" id="gender" placeholder="Enter gender">
+            <label for="age">Age:</label>
+            <input type="number" id="age" placeholder="Enter age">
+
+            <label for="gender">Gender:</label>
+            <input type="text" id="gender" placeholder="Enter gender">
+        </div>
+
+        <div class="button-group">
+            <button onclick="addPerson()">Add Person</button>
+            <button onclick="updatePerson()">Update Person</button>
+            <button onclick="deletePerson()">Delete Person</button>
+            <button onclick="findPerson()">Find Person by Name</button>
+        </div>
+
+        <div id="message"></div>
+    </div>
+
+    <hr>
+
+    <h2>All Persons</h2>
+    <ul id="person-list"></ul>
 </div>
 
-<div class="button-group">
-    <button onclick="addPerson()">Add Person</button>
-    <button onclick="updatePerson()">Update Person</button>
-    <button onclick="deletePerson()">Delete Person</button>
-    <button onclick="findPerson()">Find Person by Name</button>
-</div>
-
-<div id="message"></div>
-
-<hr>
-
-<h2>All Persons</h2>
-<ul id="person-list"></ul>
 
 <script>
     const nameInput = document.getElementById('name');
@@ -59,8 +61,17 @@
     const genderInput = document.getElementById('gender');
     const messageDiv = document.getElementById('message');
     const personListUl = document.getElementById('person-list');
+    const formWrapper = document.getElementById('form-wrapper');
 
     const API_URL = '/persons';
+
+    function toggleFormVisibility() {
+        if (formWrapper.style.display === 'none') {
+            formWrapper.style.display = 'block';
+        } else {
+            formWrapper.style.display = 'none';
+        }
+    }
 
     // --- Main Functions ---
 
@@ -81,6 +92,7 @@
                 showMessage(`Person '${person.name}' added successfully.`, 'success');
                 clearForm();
                 loadAllPersons();
+                formWrapper.style.display = 'none'; // Hide form after successful add
             } else {
                 throw new Error(`Server responded with ${response.status}`);
             }
@@ -154,6 +166,7 @@
                 if (person) {
                     populateForm(person);
                     showMessage(`Found person '${name}'.`, 'success');
+                    formWrapper.style.display = 'block'; // Show form if hidden
                 } else {
                      showMessage(`Person '${name}' not found.`, 'error');
                 }
@@ -173,7 +186,10 @@
             persons.forEach(person => {
                 const li = document.createElement('li');
                 li.textContent = person.name;
-                li.onclick = () => populateForm(person);
+                li.onclick = () => {
+                    populateForm(person);
+                    formWrapper.style.display = 'block'; // Show form on selection
+                }
                 personListUl.appendChild(li);
             });
         } catch (error) {
@@ -214,7 +230,7 @@
 
     function showMessage(msg, type = 'info') {
         messageDiv.textContent = msg;
-        messageDiv.style.color = type === 'error' ? 'red' : 'green';
+        messageDiv.className = type; // Use classes for styling
     }
 
     // Initial load
