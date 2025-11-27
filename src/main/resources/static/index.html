@@ -50,6 +50,24 @@
     <h2>All Persons</h2>
     <ul id="person-list"></ul>
 </div>
+<div class = "management-container">
+<hr>
+
+<h2>All Firms</h2>
+<table id="firma-table">
+<thead>
+<tr>
+    <th>Name</th>
+    <th>Address</th>
+    <th>Phone</th>
+    <th>Email</th>
+    <th>Website</th>
+</tr>
+</thead>
+<tbody id="firma-list-body"></tbody>
+</table>
+</div>
+
 
 
 <script>
@@ -61,6 +79,7 @@
     const genderInput = document.getElementById('gender');
     const messageDiv = document.getElementById('message');
     const personListUl = document.getElementById('person-list');
+    const firmaListBody = document.getElementById('firma-list-body'); // Elementul pentru lista de firme
     const formWrapper = document.getElementById('form-wrapper');
 
     const API_URL = '/persons';
@@ -197,6 +216,28 @@
         }
     }
 
+    async function loadAllFirme() {
+        try {
+            const response = await fetch('/firme'); // Apelăm noul endpoint
+            if (!response.ok) throw new Error(`Server responded with ${response.status}`);
+
+            const firme = await response.json();
+            firmaListBody.innerHTML = ''; // Golește lista curentă
+            firme.forEach(firma => {
+                const row = firmaListBody.insertRow();
+
+                row.insertCell(0).textContent = firma.name;
+                row.insertCell(1).textContent = firma.address;
+                row.insertCell(2).textContent = firma.phone;
+                row.insertCell(3).textContent = firma.email;
+                const websiteCell = row.insertCell(4);
+                websiteCell.innerHTML = `<a href="${firma.website}" target="_blank">${firma.website}</a>`;
+            });
+        } catch (error) {
+            showMessage(`Could not load firm list: ${error.message}`, 'error');
+        }
+    }
+
     // --- Helper Functions ---
 
     function getPersonFromForm() {
@@ -234,7 +275,10 @@
     }
 
     // Initial load
-    document.addEventListener('DOMContentLoaded', loadAllPersons);
+    document.addEventListener('DOMContentLoaded', () => {
+        loadAllPersons();
+        loadAllFirme(); // Încărcăm și firmele la pornire
+    });
 
 </script>
 

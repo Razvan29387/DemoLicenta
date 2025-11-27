@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.demo.Entity;
 
 import org.springframework.data.neo4j.core.schema.Id;
 import org.springframework.data.neo4j.core.schema.Node;
@@ -24,6 +24,8 @@ public class Person {
         this.age = age;
         this.gender = gender;
     }
+
+
 
     public String getName() {
         return name;

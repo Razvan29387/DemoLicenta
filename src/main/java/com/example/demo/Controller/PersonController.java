@@ -1,8 +1,9 @@
-package com.example.demo;
+package com.example.demo.Controller;
 
 
+import com.example.demo.Entity.Person;
+import com.example.demo.Repository.PersonRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
 import org.springframework.web.bind.annotation.*;
 @RestController
 public class PersonController {
