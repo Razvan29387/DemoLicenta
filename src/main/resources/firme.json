@@ -1,0 +1,107 @@
+[
+  {
+    "name": "Apex Innovations SRL",
+    "address": "Str. Victoriei Nr. 12, Bucuresti, Romania",
+    "phone": "+40 721 123 456",
+    "email": "contact@apexinnovations.ro",
+    "website": "https://www.apexinnovations.ro"
+  },
+  {
+    "name": "Synergy Logistics SA",
+    "address": "Bd. Unirii Nr. 45, Cluj-Napoca, Romania",
+    "phone": "+40 745 234 567",
+    "email": "office@synergylogistics.com",
+    "website": "https://www.synergylogistics.com"
+  },
+  {
+    "name": "Quantum Tech Group",
+    "address": "Calea Mosilor Nr. 210, Bucuresti, Romania",
+    "phone": "+40 766 345 678",
+    "email": "info@quantumtech.ro",
+    "website": "https://www.quantumtech.ro"
+  },
+  {
+    "name": "Stellar Solutions",
+    "address": "Str. Memorandumului Nr. 8, Cluj-Napoca, Romania",
+    "phone": "+40 722 456 789",
+    "email": "support@stellarsolutions.ro",
+    "website": "https://www.stellarsolutions.ro"
+  },
+  {
+    "name": "Dynamic Consulting",
+    "address": "Bd. Carol I Nr. 33, Iasi, Romania",
+    "phone": "+40 741 567 890",
+    "email": "consulting@dynamic.com",
+    "website": "https://www.dynamic.com"
+  },
+  {
+    "name": "Elite Trade Partners",
+    "address": "Piața Sfatului Nr. 1, Brasov, Romania",
+    "phone": "+40 762 678 901",
+    "email": "partners@elitetrade.ro",
+    "website": "https://www.elitetrade.ro"
+  },
+  {
+    "name": "Vertex Digital Agency",
+    "address": "Str. Republicii Nr. 50, Brasov, Romania",
+    "phone": "+40 723 789 012",
+    "email": "hello@vertexdigital.agency",
+    "website": "https://www.vertexdigital.agency"
+  },
+  {
+    "name": "Global Imports SA",
+    "address": "Bd. Tomis Nr. 300, Constanta, Romania",
+    "phone": "+40 744 890 123",
+    "email": "imports@globalimports.com",
+    "website": "https://www.globalimports.com"
+  },
+  {
+    "name": "Phoenix Construction",
+    "address": "Str. Traian Nr. 99, Timisoara, Romania",
+    "phone": "+40 765 901 234",
+    "email": "projects@phoenixconstruct.ro",
+    "website": "https://www.phoenixconstruct.ro"
+  },
+  {
+    "name": "Orion Software",
+    "address": "Str. Iuliu Maniu Nr. 7, Cluj-Napoca, Romania",
+    "phone": "+40 724 012 345",
+    "email": "dev@orionsoftware.dev",
+    "website": "https://www.orionsoftware.dev"
+  },
+  {
+    "name": "Meridian Transport",
+    "address": "Sos. de Centura Nr. 15, Bucuresti, Romania",
+    "phone": "+40 746 123 456",
+    "email": "dispatch@meridiantransport.ro",
+    "website": "https://www.meridiantransport.ro"
+  },
+  {
+    "name": "Creative Minds Studio",
+    "address": "Str. Smardan Nr. 11, Bucuresti, Romania",
+    "phone": "+40 767 234 567",
+    "email": "studio@creativeminds.art",
+    "website": "https://www.creativeminds.art"
+  },
+  {
+    "name": "Titan Security",
+    "address": "Bd. Eroilor Nr. 25, Cluj-Napoca, Romania",
+    "phone": "+40 725 345 678",
+    "email": "security@titan.ro",
+    "website": "https://www.titan.ro"
+  },
+  {
+    "name": "Zenith Healthcare",
+    "address": "Str. Clinicilor Nr. 3-5, Cluj-Napoca, Romania",
+    "phone": "+40 747 456 789",
+    "email": "care@zenith-health.com",
+    "website": "https://www.zenith-health.com"
+  },
+  {
+    "name": "Nova Real Estate",
+    "address": "Calea Dorobanti Nr. 134, Bucuresti, Romania",
+    "phone": "+40 768 567 890",
+    "email": "office@novarealestate.ro",
+    "website": "https://www.novarealestate.ro"
+  }
+]
