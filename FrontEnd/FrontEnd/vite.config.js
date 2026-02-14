@@ -6,8 +6,16 @@ export default defineConfig({
   plugins: [react()],
   server: {
     proxy: {
-      '/persons': 'http://localhost:8080',
-      '/firme': 'http://localhost:8080',
+      '/jobs': {
+        target: 'http://localhost:8080',
+        changeOrigin: true,
+        secure: false,
+      },
+      '/firme': {
+        target: 'http://localhost:8080',
+        changeOrigin: true,
+        secure: false,
+      }
     }
   }
 })
