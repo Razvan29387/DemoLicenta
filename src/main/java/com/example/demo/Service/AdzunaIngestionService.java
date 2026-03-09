@@ -72,17 +72,35 @@ public class AdzunaIngestionService {
         String title = jobNode.path("title").asText();
         String url = jobNode.path("redirect_url").asText();
         
+        // Extract Description
+        String description = jobNode.path("description").asText();
+        
+        // Check if description is null or empty
+        if (description == null || description.trim().isEmpty() || description.equals("null")) {
+             description = "No description available. Please visit the job link for more details.";
+        }
+
         // Extract Company
-        String companyName = jobNode.path("company").path("display_name").asText("Unknown Company");
+        String companyName = jobNode.path("company").path("display_name").asText();
+        if (companyName == null || companyName.isEmpty()) {
+             // Fallback for company name if display_name is missing but name exists (based on your JSON example)
+             companyName = jobNode.path("company").path("name").asText("Unknown Company");
+        }
         Company company = findOrCreateCompany(companyName);
 
         // Extract Location
-        String location = jobNode.path("location").path("display_name").asText("Unknown Location");
+        String location = jobNode.path("location").path("display_name").asText();
+        if (location == null || location.isEmpty()) {
+             location = jobNode.path("location").asText("Unknown Location");
+        }
         
         // Extract Category
-        String category = jobNode.path("category").path("label").asText("Uncategorized");
+        String category = jobNode.path("category").path("label").asText();
+        if (category == null || category.isEmpty()) {
+             category = jobNode.path("category").asText("Uncategorized");
+        }
 
-        Job job = new Job(adzunaId, title, location, url, category, company);
+        Job job = new Job(adzunaId, title, location, url, category, description, company);
         jobRepository.save(job);
     }
 

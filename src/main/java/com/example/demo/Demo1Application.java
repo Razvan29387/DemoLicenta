@@ -1,6 +1,6 @@
 package com.example.demo;
 
-import com.example.demo.service.AdzunaIngestionService;
+import com.example.demo.Service.AdzunaIngestionService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

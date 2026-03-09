@@ -1,6 +1,6 @@
-package com.example.demo.repository;
+package com.example.demo.Repository;
 
-import com.example.demo.entity.Company;
+import com.example.demo.Entity.Company;
 import org.springframework.data.neo4j.repository.Neo4jRepository;
 import java.util.Optional;
 

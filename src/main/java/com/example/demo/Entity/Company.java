@@ -1,4 +1,4 @@
-package com.example.demo.entity;
+package com.example.demo.Entity;
 
 import org.springframework.data.neo4j.core.schema.GeneratedValue;
 import org.springframework.data.neo4j.core.schema.Id;
