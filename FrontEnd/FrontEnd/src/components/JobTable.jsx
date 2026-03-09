@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const JobTable = ({ jobs }) => {
   if (!jobs || jobs.length === 0) {
@@ -28,7 +29,11 @@ const JobTable = ({ jobs }) => {
 
             return (
             <tr key={job.id || Math.random()}>
-              <td>{job.title}</td>
+              <td>
+                <Link to={`/jobs/${job.id}`} style={{ textDecoration: 'none', color: '#007bff', fontWeight: 'bold' }}>
+                  {job.title}
+                </Link>
+              </td>
               <td>{companyName}</td>
               <td>{category}</td>
               <td>{location}</td>

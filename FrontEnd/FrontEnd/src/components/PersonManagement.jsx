@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+/*import React, { useState, useEffect } from 'react';
 
 const API_URL = '/persons';
 
@@ -181,3 +181,4 @@ function PersonManagement() {
 }
 
 export default PersonManagement;
+*/

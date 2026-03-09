@@ -1,9 +1,9 @@
-package com.example.demo.service;
+package com.example.demo.Service;
 
-import com.example.demo.entity.Company;
-import com.example.demo.entity.Job;
-import com.example.demo.repository.CompanyRepository;
-import com.example.demo.repository.JobRepository;
+import com.example.demo.Entity.Company;
+import com.example.demo.Entity.Job;
+import com.example.demo.Repository.CompanyRepository;
+import com.example.demo.Repository.JobRepository;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.stereotype.Service;

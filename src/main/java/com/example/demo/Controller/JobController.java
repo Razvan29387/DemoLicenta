@@ -1,7 +1,7 @@
-package com.example.demo.controller;
+package com.example.demo.Controller;
 
-import com.example.demo.entity.Job;
-import com.example.demo.repository.JobRepository;
+import com.example.demo.Entity.Job;
+import com.example.demo.Repository.JobRepository;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
